@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gulf Energy Services L.L.C – Energy Consultancy | GCC & MENA</title>
+<meta name="description" content="Gulf Energy Services – Independent consultancy specializing in Supply Chain, Sourcing, Procurement, Tendering and Market Intelligence for Oil & Gas, Petrochemical, Power and Construction sectors across GCC and MENA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&family=Poppins:wght@300;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --navy-light: #1a3a6b;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-pale: #f5e9c8;
+    --white: #ffffff;
+    --off-white: #f8f6f0;
+    --grey-light: #e8e4da;
+    --grey-mid: #8a8070;
+    --text-dark: #1a1a2e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    background: rgba(10, 22, 40, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .nav-logo-main {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .nav-logo-sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 10px 22px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* Mobile Nav */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 120px 40px 80px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(26,58,107,0.5) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 50%),
+      linear-gradient(135deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%);
+  }
+
+  /* Animated grid lines */
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridMove 20s linear infinite;
+  }
+
+  @keyframes gridMove {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(60px); }
+  }
+
+  /* Diagonal accent line */
+  .hero-accent-line {
+    position: absolute;
+    top: 0; right: 20%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.3) 30%, rgba(201,168,76,0.3) 70%, transparent);
+    transform: rotate(15deg) scaleY(1.5);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 40px; height: 1px;
+    background: var(--gold);
+    vertical-align: middle;
+    margin-right: 16px;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 80px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-subtitle {
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .btn-primary {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 16px 36px;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold-light);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .btn-primary:hover::after { transform: translateX(0); }
+  .btn-primary span { position: relative; z-index: 1; }
+
+  .btn-secondary {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* Hero stats */
+  .hero-stats {
+    position: absolute;
+    bottom: 60px; right: 60px;
+    display: flex;
+    gap: 48px;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.2s forwards;
+  }
+
+  .stat {
+    text-align: right;
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'Barlow', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-top: 6px;
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.5s forwards;
+  }
+
+  .scroll-indicator span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(201,168,76,0.6), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  /* ── SECTIONS COMMON ── */
+  section { position: relative; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .section-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-tag::before {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .section-title.dark { color: var(--navy); }
+
+  .section-body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.65);
+    max-width: 640px;
+  }
+
+  .section-body.dark { color: rgba(26,26,46,0.7); }
+
+  /* ── ABOUT ── */
+  #about {
+    padding: 120px 0;
+    background: var(--navy-mid);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-left { }
+
+  .about-right {
+    padding-top: 48px;
+  }
+
+  .about-statement {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--gold-pale);
+    border-left: 2px solid var(--gold);
+    padding-left: 28px;
+    margin-bottom: 40px;
+  }
+
+  .about-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pillar {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid rgba(201,168,76,0.12);
+    background: rgba(255,255,255,0.02);
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  .pillar:hover {
+    border-color: rgba(201,168,76,0.35);
+    background: rgba(201,168,76,0.04);
+  }
+
+  .pillar-icon {
+    width: 40px; height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+  }
+
+  .pillar-icon svg { width: 24px; height: 24px; }
+
+  .pillar-text h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .pillar-text p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .about-experience {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(201,168,76,0.15);
+    margin-top: 40px;
+  }
+
+  .exp-item {
+    background: var(--navy-mid);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .exp-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .exp-label {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-top: 8px;
+  }
+
+  /* ── SERVICES ── */
+  #services {
+    padding: 120px 0;
+    background: var(--off-white);
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .services-header .section-tag {
+    justify-content: center;
+  }
+
+  .services-header .section-tag::before { display: none; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--grey-light);
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: default;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-card:hover {
+    background: var(--navy);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(10,22,40,0.3);
+  }
+
+  .service-card:hover .service-title { color: var(--white); }
+  .service-card:hover .service-desc { color: rgba(255,255,255,0.6); }
+  .service-card:hover .service-icon { color: var(--gold); }
+  .service-card:hover .service-number { color: rgba(255,255,255,0.08); }
+
+  .service-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: rgba(10,22,40,0.06);
+    line-height: 1;
+    position: absolute;
+    top: 20px; right: 24px;
+    transition: color 0.4s;
+  }
+
+  .service-icon {
+    width: 48px; height: 48px;
+    color: var(--navy-light);
+    margin-bottom: 24px;
+    transition: color 0.4s;
+  }
+
+  .service-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 16px;
+    transition: color 0.4s;
+  }
+
+  .service-desc {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--grey-mid);
+    transition: color 0.4s;
+  }
+
+  /* ── MARKETS ── */
+  #markets {
+    padding: 120px 0;
+    background: var(--navy);
+    overflow: hidden;
+  }
+
+  .markets-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .markets-regions {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .region-group {
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 24px 0;
+  }
+
+  .region-group:last-child { border-bottom: 1px solid rgba(201,168,76,0.15); }
+
+  .region-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .region-countries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .country-tag {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 6px 14px;
+    transition: all 0.2s;
+  }
+
+  .country-tag:hover {
+    background: rgba(201,168,76,0.1);
+    border-color: rgba(201,168,76,0.3);
+    color: var(--gold-light);
+  }
+
+  /* Map visual */
+  .markets-visual {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .map-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.05) 0%, transparent 70%);
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .map-dots {
+    position: absolute;
+    inset: 0;
+  }
+
+  .map-dot {
+    position: absolute;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 12px rgba(201,168,76,0.6);
+  }
+
+  .map-dot::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.3);
+    animation: dotPulse 2.5s ease infinite;
+  }
+
+  @keyframes dotPulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+
+  .map-dot:nth-child(2)::before { animation-delay: 0.4s; }
+  .map-dot:nth-child(3)::before { animation-delay: 0.8s; }
+  .map-dot:nth-child(4)::before { animation-delay: 1.2s; }
+  .map-dot:nth-child(5)::before { animation-delay: 1.6s; }
+  .map-dot:nth-child(6)::before { animation-delay: 2.0s; }
+
+  .map-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.6);
+    position: absolute;
+    white-space: nowrap;
+    transform: translateX(16px);
+  }
+
+  /* ── SECTORS ── */
+  #sectors {
+    padding: 120px 0;
+    background: var(--navy-mid);
+  }
+
+  .sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+  }
+
+  .sector-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    background: var(--navy);
+    border: 1px solid rgba(201,168,76,0.1);
+    transition: border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px 24px;
+  }
+
+  .sector-card:hover { border-color: rgba(201,168,76,0.4); }
+
+  .sector-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,22,40,0.95) 40%, transparent 100%);
+    z-index: 1;
+  }
+
+  .sector-bg-pattern {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.07;
+  }
+
+  .sector-icon-large {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 0;
+    opacity: 0.06;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .sector-card:hover .sector-icon-large {
+    opacity: 0.1;
+    transform: translate(-50%, -65%);
+  }
+
+  .sector-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .sector-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .sector-desc {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  .sector-line {
+    width: 32px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 16px;
+    transition: width 0.3s;
+  }
+
+  .sector-card:hover .sector-line { width: 56px; }
+
+  /* ── CLIENTS SECTION ── */
+  #clients {
+    padding: 100px 0;
+    background: var(--off-white);
+  }
+
+  .clients-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .clients-header .section-tag {
+    justify-content: center;
+  }
+  .clients-header .section-tag::before { display: none; }
+
+  .client-types {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--grey-light);
+    margin-top: 48px;
+  }
+
+  .client-type {
+    background: var(--white);
+    padding: 40px 32px;
+    text-align: center;
+    transition: background 0.3s;
+  }
+
+  .client-type:hover { background: var(--navy); }
+  .client-type:hover .ct-title { color: var(--white); }
+  .client-type:hover .ct-desc { color: rgba(255,255,255,0.55); }
+  .client-type:hover .ct-icon { color: var(--gold); }
+
+  .ct-icon {
+    width: 48px; height: 48px;
+    color: var(--navy);
+    margin: 0 auto 20px;
+    transition: color 0.3s;
+  }
+
+  .ct-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 12px;
+    transition: color 0.3s;
+  }
+
+  .ct-desc {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--grey-mid);
+    transition: color 0.3s;
+  }
+
+  /* ── WHY US ── */
+  #why {
+    padding: 120px 0;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #why::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .why-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .why-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 48px;
+  }
+
+  .why-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: padding-left 0.3s;
+  }
+
+  .why-item:hover { padding-left: 8px; }
+
+  .why-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--gold);
+    opacity: 0.5;
+    line-height: 1;
+  }
+
+  .why-content h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .why-content p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    padding: 120px 0;
+    background: var(--off-white);
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+  }
+
+  .contact-info { }
+
+  .contact-detail {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
+
+  .contact-detail-icon {
+    width: 44px; height: 44px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold);
+  }
+
+  .contact-detail-text h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey-mid);
+    margin-bottom: 4px;
+  }
+
+  .contact-detail-text a,
+  .contact-detail-text p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--navy);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-detail-text a:hover { color: var(--navy-light); }
+
+  /* Contact Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey-mid);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--navy);
+    background: var(--white);
+    border: 1px solid var(--grey-light);
+    padding: 14px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .form-submit {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--navy);
+    border: none;
+    padding: 18px 40px;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover { background: var(--navy-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060f1e;
+    padding: 60px 0 32px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 32px;
+  }
+
+  .footer-brand {}
+
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .footer-logo-sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .footer-tagline {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.4);
+    max-width: 320px;
+  }
+
+  .footer-col h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col ul li a {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-copy {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .footer-copy a { color: var(--gold); text-decoration: none; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+
+    #hero { padding: 100px 24px 80px; }
+    .hero-stats { display: none; }
+    .scroll-indicator { display: none; }
+
+    .section-inner { padding: 0 24px; }
+
+    .about-grid,
+    .markets-layout,
+    .why-layout,
+    .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+
+    .services-grid { grid-template-columns: 1fr; }
+    .sectors-grid { grid-template-columns: 1fr 1fr; }
+    .client-types { grid-template-columns: 1fr; }
+
+    .footer-top { grid-template-columns: 1fr; gap: 40px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+
+    .form-row { grid-template-columns: 1fr; }
+
+    .markets-visual { display: none; }
+
+    .hero-stats { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .sectors-grid { grid-template-columns: 1fr; }
+    .about-experience { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Gold divider */
+  .gold-divider {
+    width: 60px; height: 2px;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    margin-bottom: 32px;
+  }
+
+  /* Mobile nav menu */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: rgba(10,22,40,0.98);
+    backdrop-filter: blur(12px);
+    padding: 32px 24px;
+    z-index: 999;
+    flex-direction: column;
+    gap: 24px;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <a href="#hero" style="display:block; line-height:0;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 200" height="48" style="display:block;">
+        <defs>
+          <linearGradient id="ncGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#2ecc8a"/>
+            <stop offset="100%" stop-color="#00b86e"/>
+          </linearGradient>
+        </defs>
+        <text x="48" y="130" font-family="Poppins,Arial Black,sans-serif" font-size="96" font-weight="900" letter-spacing="-3" fill="url(#ncGreen)">GES</text>
+        <rect x="248" y="40" width="2" height="118" fill="rgba(255,255,255,0.18)"/>
+        <text x="296" y="108" font-family="Poppins,Arial Black,sans-serif" font-size="54" font-weight="900" letter-spacing="0" fill="#ffffff">GULF ENERGY</text>
+        <text x="296" y="142" font-family="Poppins,Arial,sans-serif" font-size="18" font-weight="300" letter-spacing="14" fill="#2ecc8a">SERVICES</text>
+      </svg>
+    </a>
+  </div>
+  <ul class="nav-links">  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#markets">Markets</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in Touch</a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#markets" onclick="toggleMenu()">Markets</a>
+  <a href="#sectors" onclick="toggleMenu()">Sectors</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-accent-line"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Independent Energy Consultancy</p>
+    <h1 class="hero-title">
+      Your Gateway to<br>
+      the <em>Gulf Region</em><br>
+      Energy Markets
+    </h1>
+    <p class="hero-subtitle">
+      Gulf Energy Services provides senior-level expertise in Supply Chain, Procurement, Tendering and Market Intelligence — connecting international manufacturers and EPC contractors to opportunities across GCC and MENA.
+    </p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary"><span>Explore Our Services</span></a>
+      <a href="#contact" class="btn-secondary">Contact Our Team →</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-number">25+</div>
+      <div class="stat-label">Years GCC Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">14</div>
+      <div class="stat-label">Countries Covered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">4</div>
+      <div class="stat-label">Industry Sectors</div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <p class="section-tag">Who We Are</p>
+        <h2 class="section-title">Built on Decades of<br>GCC Market Knowledge</h2>
+        <div class="gold-divider"></div>
+        <p class="section-body">
+          Gulf Energy Services (GES) is an independent consultancy firm headquartered in Dubai, UAE. Our leadership team brings over 25 years of hands-on experience operating across the Gulf Cooperation Council and broader MENA region.
+        </p>
+        <br>
+        <p class="section-body">
+          We serve as the strategic link between international companies seeking a foothold in Gulf markets and the industrial sectors that drive the region's economy. From procurement strategy to board-level advisory, we deliver results grounded in deep local knowledge and a vast regional network.
+        </p>
+
+        <div class="about-experience">
+          <div class="exp-item">
+            <div class="exp-number">25+</div>
+            <div class="exp-label">Years Experience</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-number">GCC</div>
+            <div class="exp-label">Primary Markets</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-number">14</div>
+            <div class="exp-label">Countries Served</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-number">UAE</div>
+            <div class="exp-label">Headquarters</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right reveal">
+        <div class="about-statement">
+          "We don't just open doors in the Gulf — we know what's behind them."
+        </div>
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+              </svg>
+            </div>
+            <div class="pillar-text">
+              <h4>Speed to Market</h4>
+              <p>We eliminate the learning curve. Our established relationships mean faster qualification, faster approvals, faster revenue.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="pillar-text">
+              <h4>Senior Representation</h4>
+              <p>You are represented at the right level — procurement directors, NOC committees, EPC decision-makers.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="pillar-text">
+              <h4>Integrity-First Approach</h4>
+              <p>Our reputation is built on honest market intelligence and transparent counsel — not inflated promises.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-header reveal">
+      <p class="section-tag">What We Do</p>
+      <h2 class="section-title dark">Comprehensive Commercial Services</h2>
+      <p class="section-body dark" style="margin: 0 auto;">From sourcing a qualified supplier to advising a board on market entry — our services cover the full commercial lifecycle.</p>
+    </div>
+
+    <div class="services-grid reveal">
+
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/>
+        </svg>
+        <h3 class="service-title">Local Network & Representation</h3>
+        <p class="service-desc">We act as your in-market representative across GCC and MENA, giving international manufacturers and suppliers a credible, senior presence without the cost of a local office. We navigate vendor registration, regulatory requirements and key stakeholder relationships on your behalf.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 6h18M3 12h18M3 18h18"/><circle cx="19" cy="6" r="3"/><circle cx="5" cy="12" r="3"/><circle cx="19" cy="18" r="3"/>
+        </svg>
+        <h3 class="service-title">Sourcing & Supply Chain</h3>
+        <p class="service-desc">We identify, qualify and manage reliable suppliers for industrial materials and equipment across the Oil & Gas, Power and Construction sectors. Our supply chain expertise ensures competitive pricing, regulatory compliance and on-time delivery for your critical procurement needs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+        </svg>
+        <h3 class="service-title">Tendering & Bid Management</h3>
+        <p class="service-desc">We manage the full tender lifecycle — from opportunity identification and pre-qualification to technical submissions and commercial negotiation. We prepare compliant, competitive bids for NOC, EPC and government tenders across the region, maximising your win probability.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <h3 class="service-title">Market Intelligence</h3>
+        <p class="service-desc">We deliver actionable intelligence on market dynamics, competitor positioning, project pipelines and procurement trends across GCC and MENA. Our reports are designed for decision-makers — not generic research, but targeted analysis that informs your commercial strategy.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">05</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+        </svg>
+        <h3 class="service-title">Procurement Management</h3>
+        <p class="service-desc">We optimise your procurement process end-to-end — vendor qualification, RFQ preparation, commercial evaluation, contract negotiation and order tracking. Particularly valuable for international companies managing Gulf-based projects remotely or entering regional procurement for the first time.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">06</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <h3 class="service-title">Board & Executive Advisory</h3>
+        <p class="service-desc">We advise international boards and senior management teams on Gulf market entry strategies, risk assessment, partner selection and commercial positioning. Our counsel is built on ground-level market experience — not theoretical frameworks.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MARKETS -->
+<section id="markets">
+  <div class="section-inner">
+    <div class="markets-layout">
+      <div class="reveal">
+        <p class="section-tag">Our Coverage</p>
+        <h2 class="section-title">Operating Across<br>GCC & MENA</h2>
+        <div class="gold-divider"></div>
+        <p class="section-body" style="margin-bottom: 48px;">
+          Our commercial network spans 14 countries across two key regions, giving our clients unmatched reach into the most active energy and industrial markets in the world.
+        </p>
+
+        <div class="markets-regions">
+          <div class="region-group">
+            <div class="region-label">Gulf Cooperation Council</div>
+            <div class="region-countries">
+              <span class="country-tag">Saudi Arabia</span>
+              <span class="country-tag">UAE</span>
+              <span class="country-tag">Qatar</span>
+              <span class="country-tag">Kuwait</span>
+              <span class="country-tag">Oman</span>
+              <span class="country-tag">Bahrain</span>
+            </div>
+          </div>
+          <div class="region-group">
+            <div class="region-label">Levant & Iraq</div>
+            <div class="region-countries">
+              <span class="country-tag">Iraq</span>
+              <span class="country-tag">Jordan</span>
+              <span class="country-tag">Lebanon</span>
+              <span class="country-tag">Syria</span>
+            </div>
+          </div>
+          <div class="region-group">
+            <div class="region-label">North Africa</div>
+            <div class="region-countries">
+              <span class="country-tag">Egypt</span>
+              <span class="country-tag">Libya</span>
+              <span class="country-tag">Algeria</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="markets-visual reveal">
+        <div class="map-container">
+          <div class="map-bg"></div>
+          <div class="map-dots">
+            <!-- Approximate positions for key markets -->
+            <div class="map-dot" style="top:35%; left:58%;">
+              <span class="map-label">Saudi Arabia</span>
+            </div>
+            <div class="map-dot" style="top:42%; left:68%;">
+              <span class="map-label" style="transform: translateX(16px);">UAE</span>
+            </div>
+            <div class="map-dot" style="top:46%; left:65%;">
+              <span class="map-label" style="transform: translateX(16px);">Qatar</span>
+            </div>
+            <div class="map-dot" style="top:20%; left:48%;">
+              <span class="map-label">Iraq</span>
+            </div>
+            <div class="map-dot" style="top:55%; left:50%;">
+              <span class="map-label">Egypt</span>
+            </div>
+            <div class="map-dot" style="top:38%; left:40%;">
+              <span class="map-label">Libya</span>
+            </div>
+          </div>
+          <!-- Decorative elements -->
+          <div style="position:absolute; bottom:24px; left:24px; font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(201,168,76,0.4);">GCC · MENA · LEVANT</div>
+          <div style="position:absolute; top:24px; right:24px; font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; color:rgba(201,168,76,0.08); line-height:1;">14<br><span style="font-size:12px; letter-spacing:0.2em;">MARKETS</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section id="sectors">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center; margin-bottom: 16px;">
+      <p class="section-tag" style="justify-content:center;">
+        <span style="display:inline-block; width:32px; height:1px; background:var(--gold); vertical-align:middle; margin-right:16px;"></span>
+        Industries We Serve
+      </p>
+      <h2 class="section-title">Four Core Sectors</h2>
+    </div>
+
+    <div class="sectors-grid reveal">
+
+      <div class="sector-card">
+        <svg class="sector-icon-large" width="160" height="160" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <path d="M12 18v-6m0 0l-3 3m3-3l3 3"/>
+          <circle cx="12" cy="5" r="2"/>
+        </svg>
+        <div class="sector-content">
+          <div class="sector-line"></div>
+          <div class="sector-name">Oil & Gas</div>
+          <div class="sector-desc">Upstream, midstream and downstream — exploration, production, pipelines, refineries and LNG facilities.</div>
+        </div>
+      </div>
+
+      <div class="sector-card">
+        <svg class="sector-icon-large" width="160" height="160" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+        <div class="sector-content">
+          <div class="sector-line"></div>
+          <div class="sector-name">Power & Energy</div>
+          <div class="sector-desc">Power generation, transmission and distribution — serving utilities, IPPs and national grid operators across the region.</div>
+        </div>
+      </div>
+
+      <div class="sector-card">
+        <svg class="sector-icon-large" width="160" height="160" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5">
+          <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+        </svg>
+        <div class="sector-content">
+          <div class="sector-line"></div>
+          <div class="sector-name">Petrochemical</div>
+          <div class="sector-desc">Petrochemical plants, refineries and chemical processing facilities — from greenfield projects to operational expansions.</div>
+        </div>
+      </div>
+
+      <div class="sector-card">
+        <svg class="sector-icon-large" width="160" height="160" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5">
+          <rect x="2" y="3" width="20" height="18"/><path d="M8 21V9h3v12M13 21V9h3v12"/>
+        </svg>
+        <div class="sector-content">
+          <div class="sector-line"></div>
+          <div class="sector-name">Construction</div>
+          <div class="sector-desc">Major infrastructure, industrial construction and MEP works — supporting EPC contractors and project owners throughout the project lifecycle.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="section-inner">
+    <div class="clients-header reveal">
+      <p class="section-tag" style="justify-content:center;">
+        <span style="display:inline-block; width:32px; height:1px; background:var(--gold); vertical-align:middle; margin-right:16px;"></span>
+        Who We Work With
+      </p>
+      <h2 class="section-title dark">Our Client Base</h2>
+      <p class="section-body dark" style="margin: 0 auto;">We work with organisations that demand senior-level engagement, market depth, and results.</p>
+    </div>
+
+    <div class="client-types reveal">
+
+      <div class="client-type">
+        <svg class="ct-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <div class="ct-title">International Manufacturers</div>
+        <div class="ct-desc">European, Asian and American manufacturers of industrial equipment, materials and systems seeking qualified representation, vendor registration and commercial development in Gulf markets.</div>
+      </div>
+
+      <div class="client-type">
+        <svg class="ct-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <div class="ct-title">EPC & MEP Contractors</div>
+        <div class="ct-desc">International and regional Engineering, Procurement and Construction contractors requiring local procurement support, subcontractor sourcing, and market intelligence for projects across GCC and MENA.</div>
+      </div>
+
+      <div class="client-type">
+        <svg class="ct-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
+        </svg>
+        <div class="ct-title">Boards & Senior Management</div>
+        <div class="ct-desc">Executive leadership teams of international companies evaluating Gulf market entry, seeking independent advisory on partner selection, risk assessment and commercial positioning in the region.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY GES -->
+<section id="why">
+  <div class="section-inner">
+    <div class="why-layout">
+      <div class="reveal">
+        <p class="section-tag">Why GES</p>
+        <h2 class="section-title">What Makes Us<br>Different</h2>
+        <div class="gold-divider"></div>
+        <p class="section-body">
+          The Gulf region rewards relationships built over years, not months. We offer what no consultant manual can replicate — genuine market fluency acquired through decades on the ground.
+        </p>
+        <br>
+        <p class="section-body">
+          Our clients don't just get reports. They get senior people who have sat across from the procurement committees, navigated NOC registration systems and closed deals in the same boardrooms they're targeting.
+        </p>
+      </div>
+
+      <div class="why-items reveal">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div class="why-content">
+            <h4>25+ Years GCC Experience</h4>
+            <p>Our leadership team has been operating in Gulf markets since before many of our clients were in business. That depth of knowledge cannot be manufactured.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div class="why-content">
+            <h4>Senior-Level Engagement Only</h4>
+            <p>You deal with principals, not account managers. Every client relationship is managed at partner level — no handoffs, no juniors running your account.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div class="why-content">
+            <h4>Independent & Conflict-Free</h4>
+            <p>As an independent consultancy, we have no hidden alliances. Our advice is driven entirely by your commercial interests — not commissions or preferred suppliers.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div class="why-content">
+            <h4>Dual-Region Coverage</h4>
+            <p>GCC expertise combined with active coverage of North Africa and the Levant — giving clients a single point of contact for the entire MENA opportunity set.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">05</div>
+          <div class="why-content">
+            <h4>UAE-Based, Globally Connected</h4>
+            <p>Headquartered in Dubai with a global network of partners — positioned at the commercial hub of the region with direct access to all major markets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-layout">
+      <div class="reveal">
+        <p class="section-tag">Get In Touch</p>
+        <h2 class="section-title dark">Let's Discuss<br>Your Requirements</h2>
+        <div class="gold-divider"></div>
+        <p class="section-body dark" style="margin-bottom: 48px;">
+          Whether you're exploring market entry, need procurement support, or want to understand the opportunity landscape — we welcome a direct conversation.
+        </p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="contact-detail-text">
+            <h4>Address</h4>
+            <p>Meydan, Dubai — United Arab Emirates</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 5.96 5.96l1.87-1.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/>
+            </svg>
+          </div>
+          <div class="contact-detail-text">
+            <h4>Phone</h4>
+            <a href="tel:+97147777222">+971.4.7777222</a>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="contact-detail-text">
+            <h4>Email</h4>
+            <a href="mailto:sales@gulfenergys.com">sales@gulfenergys.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label>Company *</label>
+              <input type="text" placeholder="Company name" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" placeholder="+1 234 567 8900">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Service of Interest</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>Local Network & Representation</option>
+              <option>Sourcing & Supply Chain</option>
+              <option>Tendering & Bid Management</option>
+              <option>Market Intelligence</option>
+              <option>Procurement Management</option>
+              <option>Board & Executive Advisory</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea placeholder="Tell us about your requirements..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="margin-bottom:20px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 200" height="52" style="display:block;">
+            <defs>
+              <linearGradient id="ftGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#2ecc8a"/>
+                <stop offset="100%" stop-color="#00b86e"/>
+              </linearGradient>
+            </defs>
+            <text x="48" y="130" font-family="Poppins,Arial Black,sans-serif" font-size="96" font-weight="900" letter-spacing="-3" fill="url(#ftGreen)">GES</text>
+            <rect x="248" y="40" width="2" height="118" fill="rgba(255,255,255,0.18)"/>
+            <text x="296" y="108" font-family="Poppins,Arial Black,sans-serif" font-size="54" font-weight="900" letter-spacing="0" fill="#ffffff">GULF ENERGY</text>
+            <text x="296" y="142" font-family="Poppins,Arial,sans-serif" font-size="18" font-weight="300" letter-spacing="14" fill="#2ecc8a">SERVICES</text>
+          </svg>
+        </div>
+                <p class="footer-tagline">
+          Independent energy consultancy connecting the world to Gulf markets. Senior expertise. Real networks. Measurable results.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Local Network</a></li>
+          <li><a href="#services">Sourcing & Supply Chain</a></li>
+          <li><a href="#services">Tendering</a></li>
+          <li><a href="#services">Market Intelligence</a></li>
+          <li><a href="#services">Procurement</a></li>
+          <li><a href="#services">Board Advisory</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About GES</a></li>
+          <li><a href="#markets">Markets</a></li>
+          <li><a href="#sectors">Sectors</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="mailto:sales@gulfenergys.com">sales@gulfenergys.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Gulf Energy Services All rights reserved. Dubai, UAE.</p>
+      <p class="footer-copy">Registered in Dubai, United Arab Emirates</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 60) {
+      nav.style.height = '60px';
+      nav.style.borderBottomColor = 'rgba(201,168,76,0.3)';
+    } else {
+      nav.style.height = '72px';
+      nav.style.borderBottomColor = 'rgba(201,168,76,0.2)';
+    }
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#1a5c2e';
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+
+  // Staggered reveal for grid items
+  document.querySelectorAll('.services-grid .service-card, .sectors-grid .sector-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.08}s`;
+  });
+</script>
+</body>
+</html>
